@@ -1,6 +1,6 @@
 function getComputerChoice () {
     choice = "";
-    number = Math.random()*100;
+    number =    Math.round(Math.random()*100);
     console.log(number);
     if (number < 33) {
         choice = "rock";
@@ -13,3 +13,5 @@ function getComputerChoice () {
 
 
 }
+
+console.log(getComputerChoice());
