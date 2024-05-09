@@ -1,3 +1,5 @@
+let humanScore = 0;
+let computerScore = 0;
 function getComputerChoice () {
     let choice = "";
     let number = Math.round(Math.random()*100);
@@ -31,3 +33,4 @@ function getHumanChoice () {
 }
 
 console.log(getComputerChoice());
+console.log(getHumanChoice());
