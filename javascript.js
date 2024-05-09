@@ -29,11 +29,15 @@ function getHumanChoice () {
             break;
         case "scissors":
             choice = "scissors";
+        default:
+            choice = "Choice not available. Pls try again.";
     }
     return choice;
 }
 
-
+function playRound (humanChoice, computerChoice) {
+    
+}
 
 console.log(getComputerChoice());
 console.log(getHumanChoice());
