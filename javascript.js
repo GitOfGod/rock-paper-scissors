@@ -18,6 +18,7 @@ function getComputerChoice () {
 
 function getHumanChoice () {
     let user_input = prompt("Choose between rock, paper or scissors");
+    user_input = user_input.toLowerCase();
     let choice = "";
     switch(user_input) {
         case "rock":
@@ -31,6 +32,8 @@ function getHumanChoice () {
     }
     return choice;
 }
+
+
 
 console.log(getComputerChoice());
 console.log(getHumanChoice());
