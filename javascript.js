@@ -53,7 +53,10 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+computer= getComputerChoice();
+console.log(computer);
+human = getHumanChoice();
+console.log(human);
+playRound(human, computer);
 console.log(computerScore);
 console.log(humanScore);
