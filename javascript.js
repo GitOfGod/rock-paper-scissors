@@ -29,6 +29,7 @@ function getHumanChoice () {
             break;
         case "scissors":
             choice = "scissors";
+            break;
         default:
             choice = "Choice not available. Pls try again.";
     }
