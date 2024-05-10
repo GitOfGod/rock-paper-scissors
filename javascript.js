@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+
 function getComputerChoice () {
     let choice = "";
     let number = Math.round(Math.random()*100);
@@ -54,10 +55,21 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-computer= getComputerChoice();
-console.log(computer);
-human = getHumanChoice();
-console.log(human);
-playRound(human, computer);
-console.log(computerScore);
-console.log(humanScore);
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        computer= getComputerChoice();  
+        human = getHumanChoice();
+        playRound(human, computer);
+    }
+
+    if (humanScore > computerScore ) {
+        console.log("You win!");
+    } else if (humanScore == computerScore) {
+        console.log("Its a draw! Try Again!")
+    } else {
+        console.log("Computer wins! Better luck next time");
+    }
+}
+
+playGame(); 
