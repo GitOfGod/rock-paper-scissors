@@ -1,7 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
 
-function getComputerChoice () {
+function getComputerChoice() {
     let choice = "";
     let number = Math.round(Math.random()*100);
     console.log(number);
@@ -17,7 +17,8 @@ function getComputerChoice () {
 
 }
 
-function getHumanChoice () {
+
+/*function getHumanChoice () {
     let user_input = prompt("Choose between rock, paper or scissors");
     user_input = user_input.toLowerCase();
     let choice = "";
@@ -35,9 +36,12 @@ function getHumanChoice () {
             choice = "Choice not available. Pls try again.";
     }
     return choice;
-}
+} */
 
-function playRound (humanChoice, computerChoice) {
+function playRound(humanChoice) {
+    let computerChoice= getComputerChoice();
+    
+
     if (humanChoice == computerChoice) {
         console.log("No one wins! Its a draw!");
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
@@ -54,6 +58,18 @@ function playRound (humanChoice, computerChoice) {
         computerScore++;
     }
 }
+
+// Rock button event listener
+const rockButton = document.body.querySelector("#rock");
+rockButton.addEventListener("click", () => playRound('rock'));
+
+// Paper button event listener
+const paperButton = document.querySelector("#paper");
+paperButton.addEventListener('click', () => playRound('paper'));
+
+// Scissors button event listener
+const scissorsButton = document.querySelector("#scissors");
+scissorsButton.addEventListener('click', () => playRound('scissors'));
 
 
 function playGame() {
@@ -72,4 +88,6 @@ function playGame() {
     }
 }
 
-playGame(); 
+
+
+//playGame();
