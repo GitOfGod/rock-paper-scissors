@@ -1,10 +1,10 @@
 let humanScore = 0;
 let computerScore = 0;
+const result = document.querySelector('#result');
 
 function getComputerChoice() {
     let choice = "";
     let number = Math.round(Math.random()*100);
-    console.log(number);
     if (number < 33) {
         choice = "rock";
     } else if (number > 66) {
@@ -43,18 +43,18 @@ function playRound(humanChoice) {
     
 
     if (humanChoice == computerChoice) {
-        console.log("No one wins! Its a draw!");
+        result.textContent = "No one wins! Its a draw!";
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
-        console.log("You win! Rock beats Scissors");
+        result.textContent = "You win! Rock beats Scissors";
         humanScore++;
     } else if (humanChoice == "paper" && computerChoice == "rock") {
-        console.log("You win! Paper beats Rock");
+        result.textContent = "You win! Paper beats Rock";
         humanScore++;
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
-        console.log("You win! Scissors beats Paper");
+        result.textContent ="You win! Scissors beats Paper";
         humanScore++;
     } else {
-        console.log("Computer wins! Better luck next time!");
+        result.textContent = "Computer wins! Better luck next time!";
         computerScore++;
     }
 }
