@@ -1,6 +1,9 @@
 let humanScore = 0;
 let computerScore = 0;
 const result = document.querySelector('#result');
+const displayHumanScore = document.querySelector('.human .score');
+const displayComputerScore = document.querySelector('.computer .score');
+
 
 function getComputerChoice() {
     let choice = "";
@@ -47,15 +50,19 @@ function playRound(humanChoice) {
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
         result.textContent = "You win! Rock beats Scissors";
         humanScore++;
+        displayHumanScore.textContent = humanScore;
     } else if (humanChoice == "paper" && computerChoice == "rock") {
         result.textContent = "You win! Paper beats Rock";
         humanScore++;
+        displayHumanScore.textContent = humanScore;
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
         result.textContent ="You win! Scissors beats Paper";
         humanScore++;
+        displayHumanScore.textContent = humanScore;
     } else {
         result.textContent = "Computer wins! Better luck next time!";
         computerScore++;
+        displayComputerScore.textContent = computerScore;
     }
 }
 
