@@ -21,26 +21,6 @@ function getComputerChoice() {
 }
 
 
-/*function getHumanChoice () {
-    let user_input = prompt("Choose between rock, paper or scissors");
-    user_input = user_input.toLowerCase();
-    let choice = "";
-    switch(user_input) {
-        case "rock":
-            choice = "rock";
-            break;
-        case "paper":
-            choice = "paper";
-            break;
-        case "scissors":
-            choice = "scissors";
-            break;
-        default:
-            choice = "Choice not available. Pls try again.";
-    }
-    return choice;
-} */
-
 function playRound(humanChoice) {
     let computerChoice= getComputerChoice();
     
@@ -80,11 +60,9 @@ scissorsButton.addEventListener('click', () => playRound('scissors'));
 
 
 function playGame() {
-    /*for (let i = 0; i < 5; i++) {
-        computer= getComputerChoice();  
-        human = getHumanChoice();
-        playRound(human, computer);
-    } */
+
+    displayHumanScore.textContent = 0;
+    displayComputerScore.textContent = 0;
 
     if (humanScore > computerScore ) {
         console.log("You win!");
@@ -97,4 +75,4 @@ function playGame() {
 
 
 
-//playGame();
+playGame();
