@@ -5,6 +5,11 @@ const displayHumanScore = document.querySelector('.human .score');
 const displayComputerScore = document.querySelector('.computer .score');
 
 
+const rockButton = document.body.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors");
+
+
 function getComputerChoice() {
     let choice = "";
     let number = Math.round(Math.random()*100);
@@ -47,6 +52,7 @@ function playRound(humanChoice) {
         computerScore++;
         displayComputerScore.textContent = computerScore;
     }
+    checkGameStatus();
 }
 
 function playRock() {
@@ -74,24 +80,30 @@ function displayWinner() {
 
 function addEventListeners() {
      // Rock button event listener
-     const rockButton = document.body.querySelector("#rock");
+     
      rockButton.addEventListener("click", playRock);
 
      // Paper button event listener
-     const paperButton = document.querySelector("#paper");
      paperButton.addEventListener('click', playPaper);
 
      // Scissors button event listener
-     const scissorsButton = document.querySelector("#scissors");
+     
      scissorsButton.addEventListener('click', playScissors);
 }
 
 function removeEventListeners() {
-    rockButton.removeEventListener("click", () => playRock);
-    paperButton.removeEventListener('click', () => playPaper);
-    scissorsButton.removeEventListener('click', () => playScissors);
+    rockButton.removeEventListener("click", playRock);
+    paperButton.removeEventListener('click', playPaper);
+    scissorsButton.removeEventListener('click', playScissors);
 
     
+}
+
+function checkGameStatus() {
+    if(humanScore >= 5 || computerScore >= 5) {
+        removeEventListeners();
+        displayWinner();
+    }
 }
 
 function playGame() {
