@@ -58,12 +58,7 @@ paperButton.addEventListener('click', () => playRound('paper'));
 const scissorsButton = document.querySelector("#scissors");
 scissorsButton.addEventListener('click', () => playRound('scissors'));
 
-
-function playGame() {
-
-    displayHumanScore.textContent = 0;
-    displayComputerScore.textContent = 0;
-
+function displayWinner() {
     if (humanScore > computerScore ) {
         console.log("You win!");
     } else if (humanScore == computerScore) {
@@ -71,6 +66,13 @@ function playGame() {
     } else {
         console.log("Computer wins! Better luck next time");
     }
+}
+
+
+function playGame() {
+    displayWinner();
+
+    
 }
 
 
