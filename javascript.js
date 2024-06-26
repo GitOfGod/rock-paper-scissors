@@ -70,24 +70,22 @@ function playPaper() {
 
 function displayWinner() {
     if (humanScore > computerScore ) {
-        console.log("You win!");
+        result.textContent = "You win!";
     } else if (humanScore == computerScore) {
-        console.log("Its a draw! Try Again!")
+        result.textContent = "Its a draw! Try Again!";
     } else {
-        console.log("Computer wins! Better luck next time");
+        result.textContent = "Computer wins! Better luck next time";
     }
 }
 
 function addEventListeners() {
      // Rock button event listener
-     
      rockButton.addEventListener("click", playRock);
 
      // Paper button event listener
      paperButton.addEventListener('click', playPaper);
 
      // Scissors button event listener
-     
      scissorsButton.addEventListener('click', playScissors);
 }
 
