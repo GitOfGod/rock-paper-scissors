@@ -17,7 +17,6 @@ function getComputerChoice() {
     }
     return choice;
 
-
 }
 
 
@@ -27,18 +26,22 @@ function playRound(humanChoice) {
 
     if (humanChoice == computerChoice) {
         result.textContent = "No one wins! Its a draw!";
+
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
         result.textContent = "You win! Rock beats Scissors";
         humanScore++;
         displayHumanScore.textContent = humanScore;
+
     } else if (humanChoice == "paper" && computerChoice == "rock") {
         result.textContent = "You win! Paper beats Rock";
         humanScore++;
         displayHumanScore.textContent = humanScore;
+
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
         result.textContent ="You win! Scissors beats Paper";
         humanScore++;
         displayHumanScore.textContent = humanScore;
+
     } else {
         result.textContent = "Computer wins! Better luck next time!";
         computerScore++;
@@ -46,17 +49,6 @@ function playRound(humanChoice) {
     }
 }
 
-// Rock button event listener
-const rockButton = document.body.querySelector("#rock");
-rockButton.addEventListener("click", () => playRound('rock'));
-
-// Paper button event listener
-const paperButton = document.querySelector("#paper");
-paperButton.addEventListener('click', () => playRound('paper'));
-
-// Scissors button event listener
-const scissorsButton = document.querySelector("#scissors");
-scissorsButton.addEventListener('click', () => playRound('scissors'));
 
 function displayWinner() {
     if (humanScore > computerScore ) {
@@ -68,10 +60,26 @@ function displayWinner() {
     }
 }
 
+function addEventListeners() {
+     // Rock button event listener
+     const rockButton = document.body.querySelector("#rock");
+     rockButton.addEventListener("click", () => playRound('rock'));
+
+     // Paper button event listener
+     const paperButton = document.querySelector("#paper");
+     paperButton.addEventListener('click', () => playRound('paper'));
+
+     // Scissors button event listener
+     const scissorsButton = document.querySelector("#scissors");
+     scissorsButton.addEventListener('click', () => playRound('scissors'));
+}
 
 function playGame() {
-    displayWinner();
-
+    if (humanScore < 5 || computerScore < 5) {
+       addEventListeners();
+    } else {
+        displayWinner();
+    }
     
 }
 
