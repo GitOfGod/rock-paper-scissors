@@ -49,6 +49,18 @@ function playRound(humanChoice) {
     }
 }
 
+function playRock() {
+    playRound("rock");
+}
+
+function playScissors() {
+    playRound("scissors");
+}
+
+function playPaper() {
+    playRound("paper"); 
+}
+
 
 function displayWinner() {
     if (humanScore > computerScore ) {
@@ -63,24 +75,27 @@ function displayWinner() {
 function addEventListeners() {
      // Rock button event listener
      const rockButton = document.body.querySelector("#rock");
-     rockButton.addEventListener("click", () => playRound('rock'));
+     rockButton.addEventListener("click", playRock);
 
      // Paper button event listener
      const paperButton = document.querySelector("#paper");
-     paperButton.addEventListener('click', () => playRound('paper'));
+     paperButton.addEventListener('click', playPaper);
 
      // Scissors button event listener
      const scissorsButton = document.querySelector("#scissors");
-     scissorsButton.addEventListener('click', () => playRound('scissors'));
+     scissorsButton.addEventListener('click', playScissors);
+}
+
+function removeEventListeners() {
+    rockButton.removeEventListener("click", () => playRock);
+    paperButton.removeEventListener('click', () => playPaper);
+    scissorsButton.removeEventListener('click', () => playScissors);
+
+    
 }
 
 function playGame() {
-    if (humanScore < 5 || computerScore < 5) {
-       addEventListeners();
-    } else {
-        displayWinner();
-    }
-    
+    addEventListeners();
 }
 
 
